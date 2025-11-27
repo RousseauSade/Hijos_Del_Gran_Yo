@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sermones - Iglesia Cristiana</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <h1>Hijos del Gran Yo Soy</h1>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./nosotros.html">Nosotros</a></li>
+                <li><a href="./sermones.html">Sermones</a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="Abrir menú">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Últimos Sermones</h2>
+            <p>Aquí puedes añadir una lista de sermones con enlaces a videos o audios.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <!-- Reemplaza # con los enlaces a tus redes sociales -->
+            <a href="#" target="_blank" title="YouTube">▶️</a>
+            <a href="#" target="_blank" title="Facebook">👍</a>
+        </div>
+        <p>&copy; 2025 Iglesia Hijos del Gran Yo Soy. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navUl = document.querySelector('nav ul');
+
+        menuToggle.addEventListener('click', () => {
+            navUl.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

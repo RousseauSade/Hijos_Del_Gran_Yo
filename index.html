@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iglesia Hijos del Gran Yo Soy</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <h1>Hijos del Gran Yo Soy</h1>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./nosotros.html">Nosotros</a></li>
+                <li><a href="./sermones.html">Sermones</a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="Abrir menú">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </nav>
+    </header>
+
+    <main>
+        <section id="welcome">
+            <h2>Bienvenidos a Nuestra Casa</h2>
+            <p>Somos una comunidad de fe apasionada por compartir el amor de Cristo y crecer juntos en Su palabra. Encontrarás un lugar donde sentirte en familia, ser edificado y encontrar propósito. Te invitamos a explorar nuestro sitio y, mejor aún, a visitarnos en persona.</p>
+            <a href="nosotros.html" class="cta-button">Conócenos Más</a>
+        </section>
+
+        <section id="streaming">
+            <h2>Transmisión en Vivo</h2>
+            <p>¡Acompáñanos en vivo cada semana! No te pierdas nuestras reuniones y prédicas directamente desde YouTube.</p>
+            <div class="video-container">
+                <!-- Embebido de la transmisión en vivo de YouTube -->
+                <iframe id="liveFrame"
+                        src=""
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <h2>Galería de Momentos</h2>
+            <div class="gallery-container">
+                <!-- Coloca aquí tus imágenes. Puedes añadir más etiquetas <img> -->
+                <img src="https://via.placeholder.com/300x200.png?text=Comunidad" alt="Foto de la comunidad de la iglesia">
+                <img src="https://via.placeholder.com/300x200.png?text=Adoración" alt="Foto de un servicio de adoración">
+                <img src="https://via.placeholder.com/300x200.png?text=Evento+Especial" alt="Foto de un evento especial">
+            </div>
+        </section>
+
+        <section id="events">
+            <h2>Próximos Eventos</h2>
+            <div class="event-list">
+                <div class="event-item"><h3>Reunión de Jóvenes</h3><p>Viernes, 7:00 PM - Salón principal</p></div>
+                <div class="event-item"><h3>Servicio Dominical</h3><p>Domingo, 10:00 AM - Auditorio</p></div>
+                <div class="event-item"><h3>Estudio Bíblico</h3><p>Miércoles, 6:30 PM - En línea</p></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <!-- Reemplaza # con los enlaces a tus redes sociales -->
+            <a href="#" target="_blank" title="YouTube">▶️</a>
+            <a href="#" target="_blank" title="Facebook">👍</a>
+        </div>
+        <p>&copy; 2025 Iglesia Hijos del Gran Yo Soy. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navUl = document.querySelector('nav ul');
+
+        menuToggle.addEventListener('click', () => {
+            navUl.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        // Carga dinámica del stream de YouTube
+        const API_KEY = "AQUÍ_DEBES_COLOCAR_TU_API_KEY"; 
+        const CHANNEL_ID = "UCYtH9BCQL8oNTdJCYm1fwBQ"; // ID de "iglesiahijosdelgranyosoy"
+        const iframe = document.getElementById("liveFrame");
+
+        async function loadLiveStream() {
+            // URL de respaldo que muestra los últimos videos del canal
+            const fallbackUrl = `https://www.youtube.com/embed/videoseries?list=UCYtH9BCQL8oNTdJCYm1fwBQ`;
+            iframe.src = fallbackUrl; // Carga el contenido de respaldo primero
+
+            try {
+                const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANNEL_ID}&eventType=live&type=video&key=${API_KEY}`;
+                const response = await fetch(searchUrl);
+                const data = await response.json();
+
+                if (data.items && data.items.length > 0) {
+                    // Si hay una transmisión en vivo, la muestra
+                    const liveVideoId = data.items[0].id.videoId;
+                    iframe.src = `https://www.youtube.com/embed/${liveVideoId}?autoplay=1&mute=1`;
+                }
+            } catch (error) {
+                console.error("Error al buscar transmisión en vivo. Se mostrará la lista de videos.", error);
+                // Si hay un error con la API, el iframe ya tiene la URL de respaldo
+            }
+        }
+
+        loadLiveStream();
+    </script>
+</body>
+</html>
