@@ -213,10 +213,10 @@ footer {
 
 .video-container {
     position: relative;
-    padding-bottom: 56.25%;
+    padding-bottom: 42.85%; /* Aspect ratio más ancho (aprox 21:9) */
     height: 0;
     overflow: hidden;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 30px auto;
     border-radius: 8px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
@@ -232,8 +232,9 @@ footer {
 
 /* Estilos del Slider de Galería */
 .slider-container {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 30px auto;
+    height: 500px; /* Altura fija para el slider */
     position: relative;
     overflow: hidden;
     border-radius: 10px;
@@ -242,7 +243,8 @@ footer {
 
 .slide {
     display: none;
-    width: 100%;
+    height: 100%; /* Asegura que el slide ocupe toda la altura */
+    width: 100%; /* Asegura que el slide ocupe todo el ancho */
 }
 
 .slide.active {
@@ -252,7 +254,8 @@ footer {
 
 .slide img {
     width: 100%;
-    height: auto; /* Mantiene la proporción */
+    height: 100%; /* La imagen ocupa toda la altura del contenedor */
+    object-fit: contain; /* Ajusta la imagen para que sea completamente visible */
     vertical-align: middle; /* Elimina espacio extra debajo de la imagen */
 }
 

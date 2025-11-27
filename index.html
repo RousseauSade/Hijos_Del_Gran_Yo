@@ -66,7 +66,7 @@
                 </div>
 
                 <div class="slide">
-                    <img src="" alt="">
+                    <img src="./assets/images/1764266954235.jpg" alt="">
                 </div>
 
                 <div class="slide">
@@ -275,7 +275,9 @@
         loadLiveStream();
 
         // Lógica del Slider de Galería
-        const slides = document.querySelectorAll('.slide');
+        // Selecciona solo los slides que tienen una imagen con una fuente (src) no vacía.
+        const slides = Array.from(document.querySelectorAll('.slide')).filter(slide => slide.querySelector('img')?.getAttribute('src'));
+
         const nextBtn = document.querySelector('.next');
         const prevBtn = document.querySelector('.prev');
         let currentSlide = 0;
@@ -291,30 +293,35 @@
         }
 
         function nextSlide() {
+            if (slides.length === 0) return;
             currentSlide = (currentSlide + 1) % slides.length;
             showSlide(currentSlide);
         }
 
         function prevSlide() {
+            if (slides.length === 0) return;
             currentSlide = (currentSlide - 1 + slides.length) % slides.length;
             showSlide(currentSlide);
         }
 
         function startSlider() {
+            if (slides.length < 2) return; // No iniciar si hay menos de 2 imágenes
             slideInterval = setInterval(nextSlide, 5000); // Cambia cada 5 segundos
         }
 
-        nextBtn.addEventListener('click', () => {
-            nextSlide();
-            clearInterval(slideInterval); // Detiene el auto-play si se usa manualmente
-        });
+        if (slides.length > 0) {
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                clearInterval(slideInterval); // Detiene el auto-play si se usa manualmente
+            });
 
-        prevBtn.addEventListener('click', () => {
-            prevSlide();
-            clearInterval(slideInterval); // Detiene el auto-play si se usa manualmente
-        });
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                clearInterval(slideInterval); // Detiene el auto-play si se usa manualmente
+            });
 
-        startSlider(); // Inicia el slider automáticamente
+            startSlider(); // Inicia el slider automáticamente
+        }
     </script>
 </body>
 </html>
