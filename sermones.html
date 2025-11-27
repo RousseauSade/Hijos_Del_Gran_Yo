@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sermones - Iglesia Cristiana</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./assets/images/favicon.ico">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Hijos del Gran Yo Soy</h1>
+        <a href="index.html" class="logo-container">
+            <!-- Reemplaza esta URL por la ruta a tu logo. Ej: 'images/logo.png' -->
+            <img src="./assets/images/Diseño sin título (61).png" alt="Logo ICM" class="header-logo">
+            <h1>ICM Hijos del Gran Yo Soy</h1>
+        </a>
         <nav>
             <ul>
-                <li><a href="./index.html">Inicio</a></li>
-                <li><a href="./nosotros.html">Nosotros</a></li>
-                <li><a href="./sermones.html">Sermones</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="sermones.html">Sermones</a></li>
             </ul>
         </nav>
         <button class="menu-toggle" aria-label="Abrir menú">
@@ -25,8 +30,72 @@
 
     <main>
         <section>
-            <h2>Últimos Sermones</h2>
-            <p>Aquí puedes añadir una lista de sermones con enlaces a videos o audios.</p>
+            <h2>Nuestras Prédicas</h2>
+            <p>Te invitamos a visitar nuestro canal de YouTube para ver las últimas prédicas y enseñanzas. Cada mensaje está preparado para edificar tu vida y acercarte más a Dios.</p>
+            <a href="https://www.youtube.com/@iglesiahijosdelgranyosoy" target="_blank" class="cta-button">Ir a YouTube</a>
+        </section>
+
+        <section id="featured-sermons">
+            <h2>Sermones Destacados</h2>
+            <div class="sermons-grid">
+                <div class="sermon-card">
+                    <div class="video-container">
+                        <!-- Reemplaza 'zfvNzxnHbUg' con el ID de un video de YouTube -->
+                        <iframe width="791" height="445" src="https://www.youtube.com/embed/AYwmibJg680" title="Del infierno a su luz - Episodio 1 - Podcast Yo Soy - Victor Toro" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <h3>Del infierno a su luz - Episodio 1 - Podcast Yo Soy - Victor Toro</h3>
+                    <p>Un tiempo de reflexión y conexión profunda con la palabra de Dios.</p>
+                </div>
+                <div class="sermon-card">
+                    <div class="video-container">
+                        <!-- Reemplaza 'VIDEO_ID_2' con el ID de otro video de YouTube -->
+                        <iframe width="791" height="445" src="https://www.youtube.com/embed/73bPucvhUDQ" title="&quot;Puertas que Dios abre puertas que Dios cierra&quot;&quot; - Ps - Hebert Maiguel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <h3>"Puertas que Dios abre puertas que Dios cierra"" - Ps - Hebert Maiguel</h3>
+                    <p>Descubre cómo la fe puede transformar tu vida y tus circunstancias.</p>
+                </div>
+
+                <div class="sermon-card">
+                    <div class="video-container">
+                        <iframe width="640" height="360" src="https://www.youtube.com/embed/fpMpgzjT0gc" title="Cortometraje - Reset &quot;Un nuevo comienzo&quot;   Campamento 2025 🔥 #gentepro " frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <h3>Cortometraje - Reset "Un nuevo comienzo" Campamento 2025 🔥 #gentepro</h3>
+                    <p>Corto del Campamento 2025</p>
+                </div>
+
+                <div class="sermon-card">
+                    <div class="video-container">
+                        <iframe width="791" height="445" src="https://www.youtube.com/embed/_hh6z5vdSGM" title="Cuando el amor ora… Dios responde.  - Omar y Nelly" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <h3>Cuando el amor ora… Dios responde. - Omar y Nelly</h3>
+                    <p>El amor es duro.</p>
+                </div>
+
+                <div class="sermon-card">
+                    <div class="video-container">
+                        <iframe width="791" height="445" src="https://www.youtube.com/embed/kkb6A9nx5o0" title="¿Como cuidar lo que tanto esperaste?  - Jhonatan y Kate" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <h3>¿Como cuidar lo que tanto esperaste? - Jhonatan y Kate</h3>
+                    <p>Como cuidar nuestras relaciones</p>
+                </div>
+
+                <div class="sermon-card">
+                    <div class="video-container">
+                        <iframe width="791" height="445" src="https://www.youtube.com/embed/gsbseTHJnys" title="¡Relaciones Tóxicas! - Yo Soy Podcast - EP:2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <h3>¡Relaciones Tóxicas! - Yo Soy Podcast - EP:2</h3>
+                    <p>Cuidado con las relaciones toxicas</p>
+                </div>
+
+                <div class="sermon-card">
+                    <div class="video-container">
+                        <iframe width="791" height="445" src="https://www.youtube.com/embed/iKpa1WHQu4k" title="¨Fe que se levanta temprano¨ Ps. Jorge Guevara" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <h3>¨Fe que se levanta temprano¨ Ps. Jorge Guevara</h3>
+                    <p>La fe que mueve montanas</p>
+                </div>
+
+            </div>
         </section>
     </main>
 
@@ -36,7 +105,7 @@
             <a href="#" target="_blank" title="YouTube">▶️</a>
             <a href="#" target="_blank" title="Facebook">👍</a>
         </div>
-        <p>&copy; 2025 Iglesia Hijos del Gran Yo Soy. Todos los derechos reservados.</p>
+        <p>&copy; 2025 ICM Hijos del Gran Yo Soy. Todos los derechos reservados.</p>
     </footer>
 
     <script>
