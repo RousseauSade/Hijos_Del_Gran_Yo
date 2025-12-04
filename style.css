@@ -329,6 +329,11 @@ footer {
     transition: color 0.3s ease;
 }
 
+.social-links .social-icon svg {
+    width: 28px; /* Tamaño unificado para los iconos */
+    height: 28px;
+}
+
 .social-links a:hover {
     color: var(--accent-color);
 }
